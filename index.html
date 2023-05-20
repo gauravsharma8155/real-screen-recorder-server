@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Real Screen Recorder</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="./image/logo.png" class="logo">
+        <p class="heading">Real Screen Recorder</p>
+    </nav>
+    <div class="main-container" id="main-container">
+        <div class="conatiner">
+
+            <div class="conatiner_box_1" id="screen1">
+                <img src="./image/Vector.png" class="camera_image">
+                <span class="container_heading">Capture with Screen</span>
+            </div>
+            <div class="conatiner_box_1" id="screen2">
+                <img src="./image/Camera.png" class="camera_image">
+                <span class="container_heading">Capture with Camera</span>
+            </div>
+            <div class="conatiner_box_1" id="screen3">
+                <img src="./image/screen.png" class="camera_screen">
+                <p class="container_heading_2">Capture with Camera + Screen</p>
+            </div>
+        </div>
+        <div>
+            <p class="footer_heading" id="footer"> Select any of the following options above to start recording.</p>
+        </div>
+        <div class="display_none" id="block1">
+            <div class="switch_button">
+                <p class="toogle_head">Record Audio</p>
+                <label class="switch">
+                    <input type="checkbox" id="check">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class=" mic_btn">
+                <form action="/action_page.php" class="form_mic">
+                      <input type="radio" id="checkbox1" name="fav_language" value="HTML" class="mic">
+                      <label for="checkbox1" class="mic_label">Mic</label><br>
+                      <input type="radio" id="checkbox2" name="fav_language" value="CSS" class="mic">
+                      <label for="checkbox2" class="mic_label">System</label><br>
+                      <input type="radio" id="checkbox3" name="fav_language" value="JavaScript" class="mic">
+                      <label for="checkbox3" class="mic_label">Mic+system</label>
+                </form>
+            </div>
+            <div class="btn_strt">
+                <button class="btn_record" id="btn_record1"> Start Recording </button>
+            </div>
+        </div>
+
+
+        <div class="display_none" id="block2">
+            <div class="switch_button">
+                <p class="toogle_head">Record Audio</p>
+                <label class="switch">
+                    <input type="checkbox" id="check1">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="mic_btn mic_btn1">
+                <form action="/action_page.php" class="form_mic">
+                    <div class="wrap">
+                        <input type="radio" id="checkboxx2" name="fav_language" value="CSS" class="mic">
+                        <label for="checkboxx2" class="mic_label">Mic</label><br>
+                    </div>
+                </form>
+            </div>
+            <div class="btn_strt">
+                <button class="btn_record" id="btn_record2"> Start Recording </button>
+            </div>
+        </div>
+
+
+
+        <div class="display_none" id="block3">
+            <div class="switch_button">
+                <p class="toogle_head">Record Audio</p>
+                <label class="switch">
+                    <input type="checkbox" id="check2">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class=" mic_btn mic_btn2 ">
+                <form action="/action_page.php" class="form_mic">
+                      <input type="radio" id="checkbo1" name="fav_language" value="HTML" class="mic">
+                      <label for="checkbo1" class="mic_label">Mic</label><br>
+                      <input type="radio" id="checkbo2" name="fav_language" value="CSS" class="mic">
+                      <label for="checkbo2" class="mic_label">System</label><br>
+                      <input type="radio" id="checkbo3" name="fav_language" value="JavaScript" class="mic">
+                      <label for="checkbo3" class="mic_label">Mic +System</label>
+                </form>
+            </div>
+            <div class="btn_strt">
+                <button class="btn_record" id="btn_record3"> Start Recording </button>
+            </div>
+        </div>
+
+        <div class="privacy">
+            <div class="privacy_heading">
+                <h3> Privacy Policy</h3>
+            </div>
+
+            <div class="privacy_content">
+                <p>﻿
+
+                    Like most sites we also use cookies or similar technologies to store user preferences and improve
+                    the
+                    application. We do not collect any personal information.
+                    we are using your microphone and camera permission in order to record audio and video. Your videos
+                    are
+                    recorded and processed on your computer, we do not have access to your videos. By using the
+                    application you
+                    agree to our Privacy Policy.
+                    OK</p>
+            </div>
+
+            <div class="btn_confrim">
+                <button id="btn_confrim" class="confirm_btn1">OK</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="js/index.js"></script>
+
+
+</body>
+
+</html>

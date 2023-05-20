@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Screen Recorder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    #resume {
+        display: none;
+    }
+</style>
+
+<body>
+
+
+    <nav class="navbar">
+        <img src="./image/logo.png" class="logo">
+        <p class="heading">Real Screen Recorder</p>
+    </nav>
+
+    <img src="./image/cancel.png" alt="" id="img" class="img">
+    <div class="container">
+        <div id="mediaWrapper"></div>
+        <div id="buttonWrapper">
+            <h2 id=""></h2>
+            <span id="pipOverlayStream"> </span>
+            <h2 id="mutingStreams">
+        </div>
+        <video src="" id="data"  class="show_video" autoplay controls ></video>
+
+        <div class="button_flex_system">
+            <div class="flex_div">
+                <button id="stop_record" class="stop">Stop Recording</button>
+                <button id="pause" class="stop1">Pause</button>
+                <button id="resume" class="stop1">Resume</button>
+            </div>
+            <div>
+                <a href="" class="btn_record_download" id="download" download=""><span
+                        class="span_download">Download</span></a>
+            </div>
+        </div>
+
+        <script src="js/scr_cam_mic.js"></script>
+</body>
+
+</html>

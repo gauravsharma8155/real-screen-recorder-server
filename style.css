@@ -1,0 +1,1134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#camscreen {
+    display: none;
+}
+
+#justWebcam {
+    display: none;
+}
+
+#justScreenShare {
+    display: none;
+}
+
+#resume {
+    display: none;
+}
+
+#screencamera {
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 10px;
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    background: linear-gradient(268.47deg, #1167B1 15.97%, #064377 100%);
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+}
+
+.logo {
+    width: 50px;
+    margin: 10px 0px 10px 80px;
+}
+
+.wrap {
+    margin-left: 150px;
+    margin-bottom: 10px;
+}
+
+.heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    color: #FFFFFF;
+    margin: 12px 0px 0px 35px;
+}
+
+.conatiner {
+    display: flex;
+    justify-content: space-around;
+}
+
+.conatiner_box_1 {
+    width: 215px;
+    height: 165px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 27px;
+}
+
+.conatiner_box_1:hover {
+    box-shadow: 8px 8px 8px #999;
+}
+
+.conatiner_box_2 {
+    width: 215px;
+    height: 165px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 8px;
+    /* box-shadow: 8px 8px 8px #999; */
+    margin: 27px;
+    cursor: pointer;
+}
+
+.conatiner_box_2:hover {
+    box-shadow: 8px 8px 8px #999;
+}
+
+.conatiner_box_3 {
+    width: 215px;
+    height: 165px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 8px;
+    /* box-shadow: 5px 5px 5px #999; */
+    margin: 27px;
+    cursor: pointer;
+}
+
+.conatiner_box_3:hover {
+    box-shadow: 5px 5px 5px #999;
+}
+
+.camera_image {
+    width: 90px;
+    margin: 33px 0px 20px 60px;
+}
+
+.camera_screen {
+    width: 190px;
+    margin: 33px 0px 0px 8px;
+}
+
+.container_heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.container_heading_1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 25px;
+}
+
+.container_heading_2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 30px;
+    margin-right: 31px;
+}
+
+
+.form_mic {
+    display: flex;
+    margin-left: 125px;
+}
+
+.mic_btn {
+    margin-left: 288px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.btn_record {
+    width: 430px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-top: 25px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* margin-left: 550px; */
+    display: block;
+    margin: auto;
+    margin-top: 22px;
+}
+
+.mic {
+    width: 20px;
+    margin-top: -17px;
+    margin-right: 7px;
+    margin-left: 65px;
+}
+
+.mic_label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer_heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    opacity: 0.5;
+}
+
+
+.btn_record1 {
+    width: 290px;
+    height: 35px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-left: px;
+    margin-top: 30px;
+    padding-top: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    text-decoration: none;
+}
+
+#system_down {
+    display: none;
+    height: 400px;
+    /* position: absolute; */
+    top: 102px;
+    left: 320px;
+
+}
+
+#pipOverlayStream {
+    border: none;
+    width: 550px;
+    margin-left: 108px;
+}
+
+#data3 {
+    display: none;
+}
+
+/* #data {
+    display: none;
+} */
+
+#system_download {
+    display: none;
+    width: 242px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-left: 474px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    top: 525px;
+    text-decoration: none;
+}
+
+#System1 {
+    height: 400px;
+    display: none;
+}
+
+#System2 {
+    height: 400px;
+    display: none;
+
+}
+
+.btn_record2 {
+    width: 242px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-left: 474px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 525px;
+    text-decoration: none;
+}
+
+.btn_record3 {
+    width: 243px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-left: 780px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 525px;
+    text-decoration: none;
+}
+
+#block2 {
+    display: none;
+}
+
+#block3 {
+    display: none;
+}
+
+#block1 {
+    display: none;
+}
+
+#cross {
+    display: none;
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    top: 80px;
+    right: 14px;
+    cursor: pointer;
+}
+
+.video_mic {
+    margin-left: 95px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    width: 580px;
+    border: 1px solid black;
+}
+
+#System1 {
+    display: none;
+    height: 400px;
+    position: absolute;
+    top: 102px;
+    left: 320px;
+}
+
+#recordedVideo {
+    display: none;
+    height: 400px;
+    position: absolute;
+    top: 102px;
+    left: 320px;
+}
+
+#mic_download {
+    display: none;
+    width: 243px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-left: 660px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    top: 525px;
+    text-decoration: none;
+}
+
+.download_btn {
+    position: relative;
+    top: 13px;
+}
+
+.box {
+    display: none;
+}
+
+.btn_strt {
+    width: 100%;
+}
+
+@media (max-width:500px) {
+    #box1 {
+        display: block;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .conatiner_box_1 {
+        background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 27px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .camera_image {
+        margin: 0px;
+        width: 80px;
+    }
+
+    .camera_screen {
+        margin: 0px;
+        width: 120px;
+    }
+
+    .container_heading {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    #footer {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-weight: 300;
+        opacity: 0.5;
+    }
+
+    #button_mic {
+        margin-left: 30px;
+    }
+
+    #button_record {
+        font-size: 20px;
+        width: 390px;
+    }
+
+    .data {
+        width: 450px;
+        margin-top: 30px;
+        margin-left: 150px;
+    }
+
+    #data2 {
+        width: 445px;
+        margin-left: 122px;
+    }
+
+    #download {
+        margin-left: 220px;
+    }
+
+    #download1 {
+        margin-left: 211px;
+        top: 486px;
+    }
+
+    #download2 {
+        top: 568px;
+        margin-left: 211px;
+    }
+
+}
+
+@media (min-width: 450px) and (max-width: 850px) {
+    .video_mic {
+        width: 585px;
+    }
+
+    .videosystem {
+        width: 585px;
+        margin-left: 75px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width:500px) and (max-width:725px) {
+    #box1 {
+        display: block;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .conatiner_box_1 {
+        background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 27px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .camera_image {
+        margin: 0px;
+        width: 80px;
+    }
+
+    .camera_screen {
+        margin: 0px;
+        width: 120px;
+    }
+
+    .container_heading {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .footer_heading {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-weight: 300;
+        opacity: 0.5;
+    }
+
+    #button_mic {
+        margin-left: 30px;
+    }
+
+    #button_record {
+        font-size: 20px;
+        width: 390px;
+    }
+
+    .data {
+        width: 450px;
+        margin-top: 30px;
+        margin-left: 150px;
+    }
+
+    #data2 {
+        width: 445px;
+        margin-left: 122px;
+    }
+
+    #download {
+        margin-left: 220px;
+    }
+
+    #download1 {
+        margin-left: 211px;
+        top: 486px;
+    }
+
+    #download2 {
+        top: 568px;
+        margin-left: 211px;
+    }
+
+    #recordedVideo {
+        left: 152px;
+        display: block;
+        width: 572px;
+        top: 102px;
+    }
+
+}
+
+@media (min-width:725px) and (max-width:950px) {
+    #box1 {
+        display: block;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #screen1 {
+        margin-left: 20px;
+        margin-top: 35px;
+
+    }
+
+    #screen2 {
+        margin-left: 25px;
+        margin-top: 35px;
+    }
+
+    #screen3 {
+        margin-right: 20px;
+        margin-left: 25px;
+        margin-top: 35px;
+    }
+
+    #footer {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-weight: 300;
+        opacity: 0.5;
+    }
+
+    .display_none {
+        margin-top: 20px;
+        display: none;
+    }
+
+    #button_record {
+        font-size: 15px;
+        width: 400px;
+    }
+
+    .data {
+        width: 500px;
+        margin-top: 30px;
+        margin-left: 150px;
+    }
+
+    /* #download {
+        margin-left: 230px;
+        width: 350px;
+    } */
+
+    #data2 {
+        width: 455px;
+        margin-left: 150px;
+        margin-top: 50px;
+    }
+
+    #download1 {
+        margin-left: 160px;
+        top: 480px;
+
+    }
+
+    #download2 {
+        top: 480px;
+        margin-left: 400px;
+    }
+
+    .btn_record2 {
+        width: 200px;
+    }
+
+    .btn_record3 {
+        width: 200px;
+    }
+
+    .mic_btn {
+        margin-left: 10px;
+    }
+
+    .btn_record {
+        margin-left: 190px;
+    }
+
+    .video_mic {
+        width: 550px;
+        left: 124px;
+        top: 61px;
+    }
+
+    #mic_download {
+        width: 200px;
+        margin-left: 296px;
+        top: 467px;
+    }
+
+    #pipOverlayStream {
+        width: 550px;
+        /* left: 110px; */
+    }
+}
+
+@media (min-width:1320px) and (max-width:1500px) {
+    #box1 {
+        display: block;
+    }
+
+    #container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #screen1 {
+        margin: 27px;
+    }
+
+    #footer {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-weight: 300;
+        opacity: 0.5;
+    }
+
+    #button_mic {
+        margin-left: 90px;
+    }
+
+    #button_record {
+        font-size: 20px;
+        width: 500px;
+    }
+
+    .data {
+        width: 995px;
+        margin-top: 30px;
+        margin-left: 225px;
+    }
+
+    #data2 {
+        margin-left: 496px;
+        margin-top: 30px;
+    }
+
+    #download1 {
+        margin-left: 520px;
+        top: 552px;
+    }
+
+    #download2 {
+        top: 552px;
+        margin-left: 775px;
+    }
+
+    .video_mic {
+        left: 250px;
+    }
+}
+
+@media (min-width:1500px) and (max-width:1800px) {
+    #box1 {
+        display: block;
+    }
+
+    #container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    #screen1 {
+        margin: 27px;
+    }
+
+    #footer {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-weight: 500;
+        opacity: 0.5;
+    }
+
+    #button_mic {
+        margin-left: 90px;
+    }
+
+    #button_record {
+        font-size: 20px;
+        width: 500px;
+    }
+
+    #button_record1 {
+        margin-left: 45px;
+    }
+
+    .data {
+        width: 930px;
+        margin-top: 30px;
+        margin-left: 275px;
+    }
+
+    /* #download {
+        margin-left: 525px;
+        width: 455px;
+        height: 45px;
+        padding-top: 11px;
+    } */
+
+    #data2 {
+        margin-left: 496px;
+        margin-top: 30px;
+    }
+
+    #download1 {
+        margin-left: 520px;
+        top: 552px;
+    }
+
+    #download2 {
+        top: 552px;
+        margin-left: 775px;
+    }
+}
+
+/* system.css */
+
+.img {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.video1 {
+    display: none;
+    width: 585px;
+    margin-top: 35px;
+    margin-left: 85px;
+}
+
+.video_mic_screen {
+    width: 585px;
+    margin-left: 85px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+}
+
+.btn_record_download {
+    display: none;
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-top: 16px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* margin-left: 280px; */
+    text-decoration: none;
+}
+
+.span_download {
+    top: 15px;
+    position: relative;
+}
+
+.container {
+
+    width: 750px;
+    margin: auto;
+    /* width: 100%;
+        height:100%; */
+    display: block;
+    margin: auto;
+    /* margin-top: 107px; */
+}
+
+.videosystem {
+    width: 580px;
+    margin-left: 85px;
+    margin-top: 35px;
+    border: 2px solid black;
+    /* display: none; */
+}
+
+.videosystem_cam {
+    width: 437px;
+    margin-left: 170px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    /* display: none; */
+}
+
+.show_video {
+    width: 505px;
+    margin-left: 120px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.button_flex {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: space-between;
+    /* margin-top: 369px; */
+}
+
+.button_flex_system {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.flex_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
+}
+
+.stop {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: fixed;
+    top: 79%;
+    right: 50%;
+}
+
+.stop1 {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: fixed;
+    top: 79%;
+    right: 20%;
+}
+
+#resume {
+    display: none;
+}
+
+#justWebcam {
+    display: none;
+}
+
+#justScreenShare {
+    display: none;
+}
+
+.btn_record1 {
+    display: none;
+    width: 430px;
+    height: 45px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-top: 25px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-left: 121px;
+    text-decoration: none;
+    padding-top: 22px;
+
+
+}
+
+.data2 {
+    width: 630px;
+    margin-top: 20px;
+    display: none;
+}
+
+#justWebcam {
+    display: none;
+}
+
+#justScreenShare {
+    display: none;
+}
+
+.data {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    top: 7px;
+    left: 49px;
+}
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.switch_button {
+    width: 250px;
+    height: 50px;
+    margin: auto;
+    background-color: #e5edf1;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: flex;
+}
+
+.toogle_head {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 17px;
+    font-style: normal;
+    padding: 10px;
+}
+
+.privacy {
+    margin-top: 22px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.privacy_heading {
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+.privacy_heading {
+    text-align: center;
+}
+
+.privacy_content p {
+    font-size: 16px;
+
+}
+.privacy_heading h3{
+    font-size: 20px;
+}
+
+.btn_confrim{
+    float: right;
+}
+
+.confirm_btn1{
+    
+    width: 77px;
+    height: 38px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    top: 86%;
+    right: 6%;
+
+}
+.confirm_btn1:hover {
+    box-shadow: 3px 3px 3px #999;
+}
