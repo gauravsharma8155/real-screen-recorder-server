@@ -29,7 +29,7 @@ Recordvideo = async () => {
 
         Showvideo()
     } catch (error) {
-       
+
     }
 }
 
@@ -167,97 +167,52 @@ stopdata = async () => {
 
     let Record_data = document.getElementById("Record_data");
     Record_data.src = URL.createObjectURL(blob);
+}
 
-    console.log(Record_data.src, "for srvcccccccccccccccccccccccccccccccccccc");
+
+async function Copy_btnfun() {
+    let Record_data = document.getElementById("Record_data").src;
+    console.log(Record_data);
+    let blob = new Blob(chunks, {
+        type: 'video/mp4'
+    });
+
+    console.log("for blob "+blob);
+
+
     try {
         const formData = new FormData();
         formData.append('video', blob, 'video.mp4');
 
 
-        
+
         for (const form of formData.entries()) {
             console.log(form, 'form');
         }
-        
+
         const options = {
             method: 'POST',
             body: formData
         };
-        
+
         console.log(options);
-        
-        const response =  fetch('https://www.realscreenrec.com/share/', options).then;
+
+        const response = fetch('https://www.realscreenrec.com/share/', options).then;
         console.log(response, "for reponse >>.");
-        
-        
+
+
         const result = await response.json();
-            console.log(result, "for result>>>>>>>>.")
+        console.log(result, "for result>>>>>>>>.")
         console.log('API response:', result);
     } catch (error) {
         console.error('Error:', error);
     }
-    
-
-
-    // fetch(download_link)
-    //     .then(response => response.blob()) // Get the response as a Blob
-    //     .then(fileData => {
-    //         console.log(fileData ,"for file data");
-    //         // Create form data with the file data
-    //         const formData = new FormData();
-    //         formData.append('file', fileData, 'downloaded_file.ext'); // Replace 'downloaded_file.ext' with the appropriate file name
-
-    //         // Set the videoUrl in the data object
-    //         const data = {
-    //             videoUrl: formData
-    //         };
-
-    //         console.log(data, "for video urlllllll");
-
-    // Send the data to the API endpoint
-
-
-
-
-
-
-    // Example POST request with video URL using fetch
-
-    // const videoUrl1 = Record_data.src;
-    // // console.log(videoUrl1, "for video url");
-    // // const formData = new FormData();
-    // // formData.append(videoUrl1);
-
-
-
-    // const data = {
-    //     videoUrl: videoUrl1
-    // };
-
-    // const option = {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    // }
-
-    // fetch("https://realscreenrec.com/share", option)
-    //     .then(response => response.json())
-    //     .then(result => {
-    //         console.log('API response:', result);
-    //     })
-    //     .catch(error => {
-    //         console.error('Error:', error);
-    //     });
-
-    // fetch("https://realscreenrec.com/share").then(response => response.json()).then(result => console.log(result, "for result")).catch(error => console.error('Error:', error));
-
-
 
 
 }
-
 let stop = document.getElementById("stop").addEventListener("click", stopRecord);
+let Copy_btn = document.getElementById("Copy_btn").addEventListener("click", Copy_btnfun);
+
+
 
 // let start = document.getElementById("start").addEventListener("click",fun3 );
