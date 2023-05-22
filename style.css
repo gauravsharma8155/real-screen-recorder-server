@@ -1151,3 +1151,25 @@ input:checked+.slider:before {
 .confirm_btn1:hover {
     box-shadow: 3px 3px 3px #999;
 }
+
+
+.btn_copy{
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.btns{
+    column-count: 2;
+    align-items: center;
+    margin-top: 20px;
+}
