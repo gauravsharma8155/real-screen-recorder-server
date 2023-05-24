@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>Real Screen Recorder</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-   
+
     <nav class="navbar">
         <img src="./image/logo.png" class="logo">
         <p class="heading">Real Screen Recorder</p>
@@ -17,7 +19,7 @@
     <img src="./image/cancel.png" alt="" id="img" class="img">
 
     <div class="container">
-        <video src="" id="data" class="videosystem_cam" muted autoplay  width="500px"></video>
+        <video src="" id="data" class="videosystem_cam" muted autoplay width="500px"></video>
         <video src="" id="data2" class="data2" muted autoplay controls width="500px"></video>
 
         <div class="button_flex_system">
@@ -26,11 +28,23 @@
                 <button id="pause" class="stop1">Pause</button>
                 <button id="resume" class="stop1">Resume</button>
             </div>
+
+            <div class="clipboard_div">
+
+                <button class="btn_copy" id="copy">Generate Link</button>
+                <button class="btn_copy_1" id="copy_1">Copy To Clipboard</button>
                 <a href="" class="btn_record_download" id="download" download=""><span
                         class="span_download">Download</span></a>
+            </div>
+
         </div>
     </div>
 
+    <div class="progress-container">
+        <input type="progress" id="progress-bar_1" width="700px"  max="100">
+      </div> 
+
     <script src="js/onlycamera.js"></script>
 </body>
+
 </html>

@@ -8,6 +8,8 @@ let img = document.getElementById("img").addEventListener("click", () => {
 let stream, audio, mixstream, chunks = [],
     recorder1, video
 
+    let blob = null
+
 
 Recordvideo = async () => {
 
@@ -133,6 +135,9 @@ stopRecord = () => {
     let source = src1.src;
     console.log("stopRecord dwsdsdsdsd", source);
 
+    let btn_copy = document.querySelector(".btn_copy");
+    btn_copy.style.display = 'block';
+
 
 
 
@@ -142,10 +147,89 @@ stopRecord = () => {
     //     video.play()
 
 }
+
+
+document.getElementById("copy").addEventListener("click", async () => {
+    console.log(blob, "for blob");
+
+
+    try {
+        // document.querySelector(".progress-bar").style.display = "block";
+
+        const progressBar = document.getElementById('progress-bar_1');
+        progressBar.value = 0;
+
+        
+
+        
+
+
+
+
+        const formData = new FormData();
+        formData.append('video', blob, 'video.mp4');
+
+
+
+        for (const form of formData.entries()) {
+            console.log(form, 'form');
+        }
+
+        const options = {
+            method: 'POST',
+            body: formData
+        };
+        progressBar.value = 50;
+        console.log("first")
+
+
+        console.log(options);
+
+        const Response = await fetch('https://www.realscreenrec.com/share/', options);
+        console.log(Response, "for reponse >>.");
+
+        const result = await Response.json();
+        console.log(result, "for result>>>>>>>>.")
+        console.log('API response:', result);
+        progressBar.style.width = "100%";
+        progressBar.value = 100;
+
+        document.getElementById("copy").style.display = "none";
+        
+
+         working_url = result.url;
+        // navigator.clipboard.writeText(working_url);
+        document.querySelector(".btn_copy").style.display = "none";
+        document.querySelector(".btn_copy_1").style.display = "block";
+
+
+
+    }
+    catch (e) {
+        console.log(console.error(e))
+    }
+
+
+
+    // let Record_data = document.getElementById("Record_data").src;
+    // console.log(Record_data);
+    // console.log(working_url, "for working...");
+    // navigator.clipboard.writeText(working_url);
+
+});
+
+document.getElementById("copy_1").addEventListener("click",()=>{
+    navigator.clipboard.writeText(working_url);
+})
+
+
+
 collecdata()
 stopdata = async () => {
+    document.querySelector(".progress-container").style.display = "block";
+
     console.log("this is console for stop1111111111111");
-    let blob = new Blob(chunks, {
+     blob = new Blob(chunks, {
         type: 'video/mp4'
     });
     chunks = []
@@ -170,48 +254,47 @@ stopdata = async () => {
 }
 
 
-async function Copy_btnfun() {
-    let Record_data = document.getElementById("Record_data").src;
-    console.log(Record_data);
-    let blob = new Blob(chunks, {
-        type: 'video/mp4'
-    });
-
-    console.log("for blob "+blob);
-
-
-    try {
-        const formData = new FormData();
-        formData.append('video', blob, 'video.mp4');
+// async function Copy_btnfun() {
+//     let Record_data = document.getElementById("Record_data").src;
+//     console.log(Record_data);
+//      blob = new Blob(chunks, {
+//         type: 'video/mp4'
+//     });
+//     chunks = []
 
 
-
-        for (const form of formData.entries()) {
-            console.log(form, 'form');
-        }
-
-        const options = {
-            method: 'POST',
-            body: formData
-        };
-
-        console.log(options);
-
-        const response = fetch('https://www.realscreenrec.com/share/', options).then;
-        console.log(response, "for reponse >>.");
+//     try {
+//         const formData = new FormData();
+//         formData.append('video', blob, 'video.mp4');
 
 
-        const result = await response.json();
-        console.log(result, "for result>>>>>>>>.")
-        console.log('API response:', result);
-    } catch (error) {
-        console.error('Error:', error);
-    }
+
+//         for (const form of formData.entries()) {
+//             console.log(form, 'form');
+//         }
+
+//         // const options = {
+//         //     method: 'POST',
+//         //     body: formData
+//         // };
+
+//         // console.log(options);
+
+//         // const response = fetch('https://www.realscreenrec.com/share/', options).then;
+//         // console.log(response, "for reponse >>.");
 
 
-}
+//         // const result = await response.json();
+//         // console.log(result, "for result>>>>>>>>.")
+//         // console.log('API response:', result);
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+
+
+// }
 let stop = document.getElementById("stop").addEventListener("click", stopRecord);
-let Copy_btn = document.getElementById("Copy_btn").addEventListener("click", Copy_btnfun);
+// let Copy_btn = document.getElementById("Copy_btn").addEventListener("click", Copy_btnfun);
 
 
 

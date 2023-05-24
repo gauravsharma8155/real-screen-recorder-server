@@ -25,7 +25,7 @@ let blob;
 let mediaWrapperDiv = document.getElementById("mediaWrapper");
 
 let canvasElement = document.createElement("canvas");
-let canvasCtx = canvasElement.getContext("2d", "willReadFrequently", true );
+let canvasCtx = canvasElement.getContext("2d", "willReadFrequently", true);
 console.log(canvasCtx, "for canvas ctx")
 let encoderOptions = {
   mimeType: ("video/webm; codecs=vp9") ? "video/webm; codecs=vp9" : "video/webm"
@@ -108,7 +108,7 @@ async function mergeStreamsFn(callback) {
   let existingAudioStreams = [
     ...(localCamStream ? localCamStream.getAudioTracks() : []),
     ...(localScreenStream ? localScreenStream.getAudioTracks() : [])
-  ];           
+  ];
   audioTracks.push(
     audioContext.createMediaStreamSource(
       new MediaStream([existingAudioStreams[0]])
@@ -140,13 +140,13 @@ async function mergeStreamsFn(callback) {
     // localCamStream.getAudioTracks().map(track => { track.enabled = false });
     screen.style.display = "none";
     callback()
-    
+
     // localScreenStream.getAudioTracks().map(track => { track.enabled = false });
   }
 }
 
 func = async () => {
-  let pipOverlayStream =  document.getElementById("pipOverlayStream");
+  let pipOverlayStream = document.getElementById("pipOverlayStream");
   // console.log(pipOverlayStream, "for pipOverlayStream")
   pipOverlayStream.pause()
 
@@ -192,7 +192,7 @@ async function attachToDOM(id, stream) {
   videoElem.width = 640;
   videoElem.height = 360;
   videoElem.autoplay = true;
-  videoElem.setAttribute("playsinline", true, {muted:true});
+  videoElem.setAttribute("playsinline", true, { muted: true });
   videoElem.srcObject = new MediaStream(stream.getTracks());
   mediaWrapperDiv.appendChild(videoElem);
   return videoElem;
@@ -202,7 +202,7 @@ function handleDataAvailable(event) {
   if (event.data.size > 0) {
     recordedChunks.push(event.data);
     download();
-  } else {}
+  } else { }
 }
 
 function stoprecordingdata() {
@@ -219,7 +219,7 @@ function download() {
   });
   // console.log(blob, "For download 1");
 
-  let data  = document.getElementById("data");
+  let data = document.getElementById("data");
   data.src = URL.createObjectURL(blob);
 
 
@@ -227,17 +227,22 @@ function download() {
   download.href = URL.createObjectURL(blob);
 }
 
-async function  stopAllStreamsFn () {
- await mediaRecorder.stop();
+async function stopAllStreamsFn() {
+  console.log("Stopping all streams11111111111111111111")
+  document.querySelector(".progress-container").style.display = "block";
+  let btn_copy = document.querySelector(".btn_copy");
+  btn_copy.style.display = 'block';
+
+  await mediaRecorder.stop();
   localCamStream.getTracks()
-  .forEach(track => track.stop());
-  
+    .forEach(track => track.stop());
+
   let pipOverlayStream = document.getElementById("pipOverlayStream")
   pipOverlayStream.style.display = 'none'
 
   let data = document.getElementById("data").style.display = 'block'
-  let  download = document.getElementById("download").style.display  = 'block'
-  
+  let download = document.getElementById("download").style.display = 'block'
+
 
   let pause2 = document.getElementById("pause");
   pause2.style.display = 'none';
@@ -265,3 +270,77 @@ allfunction()
 let pause = document.getElementById("pause").addEventListener("click", func);
 let resume = document.getElementById("resume").addEventListener("click", func2);
 let stop_record = document.getElementById("stop_record").addEventListener("click", stopAllStreamsFn)
+
+
+document.getElementById("copy").addEventListener("click", async () => {
+  console.log(blob, "for blob");
+
+
+  try {
+    // document.querySelector(".progress-bar").style.display = "block";
+
+    const progressBar = document.getElementById('progress-bar_1');
+    progressBar.value = 0;
+
+
+
+
+
+
+
+
+    const formData = new FormData();
+    formData.append('video', blob, 'video.mp4');
+
+
+
+    for (const form of formData.entries()) {
+      console.log(form, 'form');
+    }
+
+    const options = {
+      method: 'POST',
+      body: formData
+    };
+    progressBar.value = 50;
+    console.log("first")
+
+
+    console.log(options);
+
+    const Response = await fetch('https://www.realscreenrec.com/share/', options);
+    console.log(Response, "for reponse >>.");
+
+    const result = await Response.json();
+    console.log(result, "for result>>>>>>>>.")
+    console.log('API response:', result);
+    progressBar.style.width = "100%";
+    progressBar.value = 100;
+
+    document.getElementById("copy").style.display = "none";
+
+
+    working_url = result.url;
+    // navigator.clipboard.writeText(working_url);
+    document.querySelector(".btn_copy").style.display = "none";
+    document.querySelector(".btn_copy_1").style.display = "block";
+
+
+
+  }
+  catch (e) {
+    console.log(console.error(e))
+  }
+
+
+
+  // let Record_data = document.getElementById("Record_data").src;
+  // console.log(Record_data);
+  // console.log(working_url, "for working...");
+  // navigator.clipboard.writeText(working_url);
+
+});
+
+document.getElementById("copy_1").addEventListener("click", () => {
+  navigator.clipboard.writeText(working_url);
+})

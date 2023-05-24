@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,28 +19,42 @@
     </nav>
     <img src="./image/cancel.png" alt="" id="img" class="img">
     <div class="container">
-        <div>
-            <video src="" id="video" class="video_mic" autoplay   muted></video>
-            <video src="" id="Record_data" class="video1" autoplay controls></video>
-        </div>
-        <div class="button_flex">
+        <video src="" id="video" class="videosystem" autoplay  muted></video>
+        <video src="" id="Record_data" class="video1" autoplay controls></video>
+        <div class="button_flex_system">
             <div class="flex_div">
                 <button id="stop" class="stop">Stop Recording</button>
                 <button id="pause" class="stop1">Pause</button>
                 <button id="resume" class="stop1">Resume</button>
             </div>
-            <div>
+            <div class="btns">
+                <button class="btn_copy" id="copy">Generate Link</button>
+                <button class="btn_copy_1" id="copy_1">Copy To Clipboard</button>
+
+                <div class="loader"></div>
                 <a href="" class="btn_record_download" id="download" download=""><span
                         class="span_download">Download</span></a>
             </div>
-
-            <div>
-                <button href="" class="btn_record_downloa" id="Copy_btn" download=""><span
-                        class="span_download">Copy To Clipboard</span></button>
-            </div>
         </div>
-
     </div>
+
+    <!-- <div class="progress_divv">
+        <div class="progress-bar">
+            <span class="bar">
+              <span class="progress"></span>
+            </span>
+          </div>
+    </div> -->
+
+
+
+    <div class="progress-container">
+        <input type="progress" id="progress-bar_1" width="700px"  max="100">
+      </div> 
+
+   
+
+
 
     <script src="js/screenmicc.js"></script>
 </body>

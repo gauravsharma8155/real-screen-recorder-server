@@ -7,6 +7,7 @@ let img = document.getElementById("img").addEventListener("click", () => {
 
 let stream, audio, mixstream, chunks = [],
     recorder1, video
+    let blob = null;
 
 
 Recordvideo = async () => {
@@ -99,10 +100,84 @@ handledatavailble = (e) => {
 
 
 
+document.getElementById("copy").addEventListener("click", async () => {
+    console.log(blob, "for blob");
+
+
+    try {
+        // document.querySelector(".progress-bar").style.display = "block";
+
+        const progressBar = document.getElementById('progress-bar_1');
+        progressBar.value = 0;
+
+        
+
+        
+
+
+
+
+        const formData = new FormData();
+        formData.append('video', blob, 'video.mp4');
+
+
+
+        for (const form of formData.entries()) {
+            console.log(form, 'form');
+        }
+
+        const options = {
+            method: 'POST',
+            body: formData
+        };
+        progressBar.value = 50;
+        console.log("first")
+
+
+        console.log(options);
+
+        const Response = await fetch('https://www.realscreenrec.com/share/', options);
+        console.log(Response, "for reponse >>.");
+
+        const result = await Response.json();
+        console.log(result, "for result>>>>>>>>.")
+        console.log('API response:', result);
+        progressBar.style.width = "100%";
+        progressBar.value = 100;
+
+        document.getElementById("copy").style.display = "none";
+        
+
+         working_url = result.url;
+        // navigator.clipboard.writeText(working_url);
+        document.querySelector(".btn_copy").style.display = "none";
+        document.querySelector(".btn_copy_1").style.display = "block";
+
+
+
+    }
+    catch (e) {
+        console.log(console.error(e))
+    }
+
+
+
+    // let Record_data = document.getElementById("Record_data").src;
+    // console.log(Record_data);
+    // console.log(working_url, "for working...");
+    // navigator.clipboard.writeText(working_url);
+
+});
+
+document.getElementById("copy_1").addEventListener("click",()=>{
+    navigator.clipboard.writeText(working_url);
+})
+
 
 
 stopRecord = () => {
 
+    document.querySelector(".progress-container").style.display = "block";
 
     recorder1.stop()
     stream.getTracks()
@@ -115,10 +190,12 @@ stopRecord = () => {
     pause.style.display='none'
     let resume = document.getElementById("resume")
     resume.style.display='none'
+    let btn_copy = document.querySelector(".btn_copy");
+    btn_copy.style.display = 'block';
 }
 collecdata()
 stopdata = () => {
-    let blob = new Blob(chunks, {
+     blob = new Blob(chunks, {
         type: 'video/mp4'
     });
     chunks = []

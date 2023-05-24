@@ -839,7 +839,7 @@
     background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
     border-radius: 6px;
     border: none;
-    /* margin-top: 8px; */
+    margin-top: 16px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -847,12 +847,27 @@
     text-align: center;
     color: #FFFFFF;
     cursor: pointer;
-    margin-left: 29px;
+    /* margin-left: 280px; */
     text-decoration: none;
 }
-.clipboard_div{
-    display: flex;
-    margin-top: 6px;
+
+.btn_record_download {
+    display: none;
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    margin-top: 16px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* margin-left: 280px; */
+    text-decoration: none;
 }
 
 .span_download {
@@ -1106,17 +1121,16 @@ input:checked+.slider:before {
     font-size: 16px;
 
 }
-
-.privacy_heading h3 {
+.privacy_heading h3{
     font-size: 20px;
 }
 
-.btn_confrim {
+.btn_confrim{
     float: right;
 }
 
-.confirm_btn1 {
-
+.confirm_btn1{
+    
     width: 77px;
     height: 38px;
     background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
@@ -1134,13 +1148,12 @@ input:checked+.slider:before {
     right: 6%;
 
 }
-
 .confirm_btn1:hover {
     box-shadow: 3px 3px 3px #999;
 }
 
 
-.btn_copy {
+.btn_copy{
     width: 200px;
     height: 50px;
     background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
@@ -1153,194 +1166,13 @@ input:checked+.slider:before {
     text-align: center;
     color: #FFFFFF;
     cursor: pointer;
-    display: none;
-}
-.btn_copy_1 {
-    width: 200px;
-    height: 50px;
-    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
-    border-radius: 6px;
-    border: none;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    text-align: center;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: none;
 }
 
-.btns {
+.btns{
     column-count: 2;
     align-items: center;
     margin-top: 20px;
 }
 
 
-.loader {
-    display: none;
-    border: 10px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 10px solid #3498db;
-    width: 20px;
-    height: 20px;
-    -webkit-animation: spin 2s linear infinite;
-    /* Safari */
-    animation: spin 2s linear infinite;
-}
 
-/* Safari */
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* $green: #75b800;
-$gray-light: #eef1f3;
-$bar-size: 5px;
-$bar-radius: 60px;
-$bar-bg: rgba(0,0,0,0.075); */
-
-body {
-    background: eef1f3;
-}
-
-@keyframes loader {
-
-    0% {
-        width: 0;
-    }
-
-    20% {
-        width: 10%;
-    }
-
-    25% {
-        width: 24%;
-    }
-
-    43% {
-        width: 41%;
-    }
-
-    56% {
-        width: 50%;
-    }
-
-    66% {
-        width: 52%;
-    }
-
-    71% {
-        width: 60%;
-    }
-
-    75% {
-        width: 76%;
-
-    }
-
-    94% {
-        width: 86%;
-    }
-
-    100% {
-        width: 100%;
-    }
-
-}
-
-.progress-bar {
-    border-radius: 0px;
-    overflow: hidden;
-    width: 100%;
-    /* width: 500px; */
-    display: none;
-
-
-
-}
-
-span {
-    display: block;
-}
-
-.bar {
-    background: rgba(0, 0, 0, 0.075);
-}
-
-.progress {
-    animation: loader 1.8s ease infinite;
-    background: #1F74BA;
-    color: #fff;
-    padding: 5px;
-    width: 0;
-}
-
-.progress-bar {
-    left: 50%;
-    max-width: 50%;
-    position: absolute;
-    top: 99%;
-    transform: translate3d(-50%, -50%, 0);
-}
-
-
-
-
-/* #progress-bar_1 {
-    height: 100%;
-    background-color: #1F74BA;
-    transition: width 0.3s;
-    width: 449px;
-
-
-}
-
-.progress-container {
-    position: absolute;
-    bottom: 0px;
-    left: 185px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-} */
-
-.progress-container {
-    display: none;
-    width: 409px;
-    height: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    position: absolute;
-    left: 190px;
-    bottom: 3px;
-  }
-  
-  #progress-bar_1 {
-   /* width: 65px; */
-   height: 100%;
-   background-color: #1F74BA;
-   transition: width 0.3s;
-   /* width: 200px; */
-   width: 0px;
-   border: none;
-  }
-  

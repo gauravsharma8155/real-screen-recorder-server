@@ -22,18 +22,29 @@
             <span id="pipOverlayStream"></span>
             <h2 id="mutingStreams">
         </div>
-        <video src="" id="data" class="show_video"  autoplay  controls></video>
+        <video src="" id="data" class="show_video" autoplay controls></video>
         <div class="button_flex_system">
             <div class="flex_div">
                 <button id="stop_record" class="stop">Stop Recording</button>
                 <button id="pause" class="stop1">Pause</button>
                 <button id="resume" class="stop1">Resume</button>
             </div>
-            <a href="" class="btn_record_download" id="download" download=""><span
-                    class="span_download">Download</span></a>
+
+            <div class="btns">
+                <button class="btn_copy" id="copy">Generate Link</button>
+                <button class="btn_copy_1" id="copy_1">Copy To Clipboard</button>
+
+                <div class="loader"></div>
+                <a href="" class="btn_record_download" id="download" download=""><span
+                        class="span_download">Download</span></a>
+            </div>
         </div>
     </div>
-        <script src="js/mic_systemscreen.js"></script>
+
+    <div class="progress-container">
+        <input type="progress" id="progress-bar_1" width="700px"  max="100">
+      </div> 
+    <script src="js/mic_systemscreen.js"></script>
 </body>
 
 </html>
