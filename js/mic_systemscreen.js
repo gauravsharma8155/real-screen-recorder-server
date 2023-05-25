@@ -236,7 +236,7 @@ async function stopAllStreamsFn() {
   
 
   console.log("Stopping all streams11111111111111111111");
-  document.querySelector(".progress-container").style.display = "block";
+  // document.querySelector(".progress-container").style.display = "block";
   let btn_copy = document.querySelector(".btn_copy");
   btn_copy.style.display = 'block';
   await mediaRecorder.stop();
@@ -327,13 +327,16 @@ let stop_record = document.getElementById("stop_record").addEventListener("click
 
 document.getElementById("copy").addEventListener("click", async () => {
   console.log(blob, "for blob");
+  document.querySelector("#video_text").style.display = "block";
+  document.querySelector(".progress-container").style.display = "block";
+  document.querySelector(".overlay").style.display = "block";
 
 
   try {
     // document.querySelector(".progress-bar").style.display = "block";
 
     const progressBar = document.getElementById('progress-bar_1');
-    progressBar.value = 0;
+    // progressBar.value = 0;
 
 
 
@@ -355,7 +358,7 @@ document.getElementById("copy").addEventListener("click", async () => {
       method: 'POST',
       body: formData
     };
-    progressBar.value = 50;
+    // progressBar.value = 50;
     console.log("first")
 
 
@@ -368,7 +371,7 @@ document.getElementById("copy").addEventListener("click", async () => {
     console.log(result, "for result>>>>>>>>.")
     console.log('API response:', result);
     progressBar.style.width = "100%";
-    progressBar.value = 100;
+    // progressBar.value = 100;
 
     document.getElementById("copy").style.display = "none";
 
@@ -396,4 +399,15 @@ document.getElementById("copy").addEventListener("click", async () => {
 
 document.getElementById("copy_1").addEventListener("click", () => {
   navigator.clipboard.writeText(working_url);
+  document.querySelector(".overlay").style.display = "none";
+  document.querySelector(".progress-container").style.display = "none";
+  document.querySelector(".videon_text").style.display = "none";
+
+  setTimeout(() => {
+      document.getElementById("copy_1").textContent = "Copied..."   
+  }, 1000);
+
+  setTimeout(() => {
+      document.getElementById("copy_1").textContent = "Copy Link"   
+  }, 2000);
 })

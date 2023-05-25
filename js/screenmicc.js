@@ -8,7 +8,7 @@ let img = document.getElementById("img").addEventListener("click", () => {
 let stream, audio, mixstream, chunks = [],
     recorder1, video
 
-    let blob = null
+let blob = null
 
 
 Recordvideo = async () => {
@@ -48,27 +48,18 @@ Showvideo = () => {
 
 collecdata = async () => {
     console.log("this is console for stop333333333333333");
-
     await Recordvideo()
-    // console.log("console for fun3");
-
     if (stream && audio) {
         mixstream = new MediaStream([
             ...stream.getTracks(),
             ...audio.getTracks()
         ]);
-
         recorder1 = new MediaRecorder(mixstream);
         recorder1.ondataavailable = handledatavailble;
-        // console.log(handledatavailble)
         recorder1.onstop = stopdata
         recorder1.pause
-
         recorder1.start(200);
-        // console.log(recorder1, "ccs")
     }
-
-
 }
 
 let pause = document.getElementById("pause")
@@ -86,10 +77,6 @@ pause = document.getElementById("pause").addEventListener("click", async () => {
     let pause = document.getElementById("pause")
     pause.style.display = 'none'
     let resume = document.getElementById("resume").style.display = 'block'
-
-    // resume.style.display = 'block'
-
-
 })
 
 resume = document.getElementById("resume").addEventListener("click", async () => {
@@ -138,33 +125,22 @@ stopRecord = () => {
     let btn_copy = document.querySelector(".btn_copy");
     btn_copy.style.display = 'block';
 
-
-
-
-    // let video = document.getElementById("video");
-    //     console.log(video)
-    //     video.srcObject = null
-    //     video.play()
-
 }
 
 
 document.getElementById("copy").addEventListener("click", async () => {
     console.log(blob, "for blob");
+    document.querySelector("#video_text").style.display = "block";
+    document.querySelector(".progress-container").style.display = "block";
+    document.querySelector(".overlay").style.display = "block";
+
+
 
 
     try {
-        // document.querySelector(".progress-bar").style.display = "block";
 
         const progressBar = document.getElementById('progress-bar_1');
         progressBar.value = 0;
-
-        
-
-        
-
-
-
 
         const formData = new FormData();
         formData.append('video', blob, 'video.mp4');
@@ -192,12 +168,12 @@ document.getElementById("copy").addEventListener("click", async () => {
         console.log(result, "for result>>>>>>>>.")
         console.log('API response:', result);
         progressBar.style.width = "100%";
-        progressBar.value = 100;
+        progressBar.value = ""
 
         document.getElementById("copy").style.display = "none";
-        
 
-         working_url = result.url;
+
+        working_url = result.url;
         // navigator.clipboard.writeText(working_url);
         document.querySelector(".btn_copy").style.display = "none";
         document.querySelector(".btn_copy_1").style.display = "block";
@@ -218,18 +194,29 @@ document.getElementById("copy").addEventListener("click", async () => {
 
 });
 
-document.getElementById("copy_1").addEventListener("click",()=>{
+document.getElementById("copy_1").addEventListener("click", () => {
     navigator.clipboard.writeText(working_url);
+    document.querySelector(".overlay").style.display = "none";
+    document.querySelector(".progress-container").style.display = "none";
+    document.querySelector(".videon_text").style.display = "none";
+
+    setTimeout(() => {
+        document.getElementById("copy_1").textContent = "Copied..."   
+    }, 1000);
+
+    setTimeout(() => {
+        document.getElementById("copy_1").textContent = "Copy Link"   
+    }, 2000);
 })
 
 
 
 collecdata()
 stopdata = async () => {
-    document.querySelector(".progress-container").style.display = "block";
+    
 
     console.log("this is console for stop1111111111111");
-     blob = new Blob(chunks, {
+    blob = new Blob(chunks, {
         type: 'video/mp4'
     });
     chunks = []

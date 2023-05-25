@@ -679,8 +679,10 @@
     }
 
     #pipOverlayStream {
-        width: 550px;
+        width: 585px;
         /* left: 110px; */
+        margin-top: 9px;
+        margin-left: 98px;
     }
 }
 
@@ -847,10 +849,13 @@
     text-align: center;
     color: #FFFFFF;
     cursor: pointer;
-    margin-left: 29px;
+    margin-left: 18px;
     text-decoration: none;
+    box-shadow: 8px 8px 8px #999;
+
 }
-.clipboard_div{
+
+.clipboard_div {
     display: flex;
     margin-top: 6px;
 }
@@ -858,6 +863,13 @@
 .span_download {
     top: 15px;
     position: relative;
+    display: flex;
+    padding-left: 50px
+}
+
+.img_save {
+    padding-right: 3px;
+    padding-top: 5px;
 }
 
 .container {
@@ -889,12 +901,13 @@
 }
 
 .show_video {
-    width: 505px;
-    margin-left: 120px;
+    width: 585px;
+    margin-left: 85px;
     margin-top: 35px;
     margin-bottom: 20px;
     display: none;
 }
+
 
 .button_flex {
     display: flex;
@@ -934,6 +947,10 @@
     position: fixed;
     top: 79%;
     right: 50%;
+    box-shadow: 8px 8px 8px #999;
+    color: #1F74BA;
+    background: #E0E0E0;
+
 }
 
 .stop1 {
@@ -952,6 +969,8 @@
     position: fixed;
     top: 79%;
     right: 20%;
+    box-shadow: 8px 8px 8px #999;
+
 }
 
 #resume {
@@ -1143,7 +1162,7 @@ input:checked+.slider:before {
 .btn_copy {
     width: 200px;
     height: 50px;
-    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    background: #E0E0E0;
     border-radius: 6px;
     border: none;
     font-family: 'Poppins';
@@ -1151,26 +1170,40 @@ input:checked+.slider:before {
     font-weight: 600;
     font-size: 14px;
     text-align: center;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: none;
-}
-.btn_copy_1 {
-    width: 200px;
-    height: 50px;
-    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
-    border-radius: 6px;
-    border: none;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    text-align: center;
-    color: #FFFFFF;
+    color: #00477B;
+    box-shadow: 8px 8px 8px #999;
     cursor: pointer;
     display: none;
 }
 
+.btn_copy_1 {
+    width: 200px;
+    height: 50px;
+    background: #E0E0E0;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color:  #00477B;
+    cursor: pointer;
+    display: none;
+    box-shadow: 8px 8px 8px #999;
+
+}
+.overlay{
+    display: none;
+    width: 586px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: red; */
+    height: 330px;
+    z-index: 999999;
+    position: absolute;
+    top: 105px;
+    left: 102px;
+}
 .btns {
     column-count: 2;
     align-items: center;
@@ -1304,43 +1337,117 @@ span {
 
 
 
-/* #progress-bar_1 {
-    height: 100%;
-    background-color: #1F74BA;
-    transition: width 0.3s;
-    width: 449px;
-
-
-}
-
-.progress-container {
-    position: absolute;
-    bottom: 0px;
-    left: 185px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-} */
 
 .progress-container {
     display: none;
     width: 409px;
-    height: 20px;
-    border: 1px solid #ccc;
+    height: 13px;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
     overflow: hidden;
     position: absolute;
     left: 190px;
-    bottom: 3px;
-  }
-  
-  #progress-bar_1 {
-   /* width: 65px; */
-   height: 100%;
-   background-color: #1F74BA;
-   transition: width 0.3s;
-   /* width: 200px; */
-   width: 0px;
-   border: none;
-  }
-  
+    bottom: 254px;
+    background-color: #FFFFFF;
+    z-index: 999999;
+}
+
+.videon_text {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: absolute;
+    top: 48%;
+    left: 33%;
+    color: white;
+    display: none;
+    z-index: 9999999;
+}
+
+#progress-bar_1 {
+    width: 65px; 
+    height: 100%;
+    background-color: #1F74BA;
+    transition: width 0.3s;
+    width: 0px;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    height: 19px;
+    z-index: 999999;
+}
+
+
+span {
+    padding-right: 2px;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    background-color: #1F74BA;
+    ;
+}
+
+/* Popup arrow */
+.popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    font-size: 11px;
+    position: fixed;
+    bottom: 115px;
+    left: 256px;
+}
+
+
+.btn_copy:hover {
+    box-shadow: 8px 8px 8px #999;
+}
+
+.btn_copy_1:hover {
+    box-shadow: 8px 8px 8px #999;
+}
+
+.stop:hover {
+    box-shadow: 8px 8px 8px #999;
+}
+
+
+

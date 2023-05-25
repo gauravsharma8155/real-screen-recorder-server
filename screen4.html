@@ -18,6 +18,8 @@
     <div class="container">
         <div>
             <video src="" id="video" class="video_mic" autoplay muted></video>
+<div class="overlay"></div>
+
             <video src="" id="Record_data" class="video1" autoplay controls></video>
         </div>
         <div class="button_flex">
@@ -28,8 +30,8 @@
             </div>
             <div>
                 <div class="btns">
-                    <button class="btn_copy" id="copy">Generate Link</button>
-                    <button class="btn_copy_1" id="copy_1">Copy To Clipboard</button>
+                    <button class="btn_copy" id="copy">Save Video</button>
+                    <button class="btn_copy_1" id="copy_1">Copy Link</button>
 
                     <div class="loader"></div>
                     <a href="" class="btn_record_download" id="download" download=""><span
@@ -39,6 +41,7 @@
         </div>
 
     </div>
+    <h3 class="videon_text" id="video_text">Just wait.. Generating a shareable link for you!</h3>
 
     <div class="progress-container">
         <input type="progress" id="progress-bar_1" width="700px"  max="100">

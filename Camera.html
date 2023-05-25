@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Screen Recorder</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="camera.css">
+
 </head>
 
 <body>
@@ -20,6 +22,8 @@
     <div class="container">
         <video src="" id="data" class="videosystem_cam" muted autoplay ></video>
         <video src="" id="data2" class="data2" autoplay controls></video>
+<div class="overlay"></div>
+
         <div class="button_flex_system">
             <div class="flex_div">
                 <button id="stop" class="stop">Stop Recording</button>
@@ -29,13 +33,14 @@
             </div>
             <div class="clipboard_div">
 
-                <button class="btn_copy" id="copy">Generate Link</button>
-                <button class="btn_copy_1" id="copy_1">Copy To Clipboard</button>
+                <button class="btn_copy" id="copy">Share Video</button>
+                <button class="btn_copy_1" id="copy_1">Copy Link</button>
                 <a href="" class="btn_record_download" id="download" download=""><span
                     class="span_download">Download</span></a>
             </div>
         </div>
     </div>
+    <h3 class="videon_text" id="video_text">Just wait.. Generating a shareable link for you!</h3>
     <div class="progress-container">
         <input type="progress" id="progress-bar_1" width="700px"  max="100">
       </div> 
