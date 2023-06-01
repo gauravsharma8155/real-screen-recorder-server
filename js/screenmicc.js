@@ -132,7 +132,7 @@ document.getElementById("copy").addEventListener("click", async () => {
     console.log(blob, "for blob");
     document.querySelector("#video_text").style.display = "block";
     document.querySelector(".progress-container").style.display = "block";
-    document.querySelector(".overlay").style.display = "block";
+    document.querySelector(".video1").style.filter ='contrast(0.5)'
 
 
 
@@ -140,7 +140,7 @@ document.getElementById("copy").addEventListener("click", async () => {
     try {
 
         const progressBar = document.getElementById('progress-bar_1');
-        progressBar.value = 0;
+        // progressBar.value = 0;
 
         const formData = new FormData();
         formData.append('video', blob, 'video.mp4');
@@ -155,14 +155,19 @@ document.getElementById("copy").addEventListener("click", async () => {
             method: 'POST',
             body: formData
         };
-        progressBar.value = 50;
+        // progressBar.value = 50;
         console.log("first")
 
 
         console.log(options);
+        setTimeout(() => {
+            progressBar.style.width = "30%";
+        }, 500);
 
         const Response = await fetch('https://www.realscreenrec.com/share/', options);
         console.log(Response, "for reponse >>.");
+        progressBar.style.width = "50%";
+
 
         const result = await Response.json();
         console.log(result, "for result>>>>>>>>.")
@@ -196,7 +201,8 @@ document.getElementById("copy").addEventListener("click", async () => {
 
 document.getElementById("copy_1").addEventListener("click", () => {
     navigator.clipboard.writeText(working_url);
-    document.querySelector(".overlay").style.display = "none";
+       document.querySelector(".video1").style.filter =''
+
     document.querySelector(".progress-container").style.display = "none";
     document.querySelector(".videon_text").style.display = "none";
 

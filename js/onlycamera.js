@@ -37,14 +37,14 @@ StratCameraRecording = async () => {
         console.log(blob, "for blob");
         document.querySelector("#video_text").style.display = "block";
         document.querySelector(".progress-container").style.display = "block";
-        document.querySelector(".overlay").style.display = "block";
+        document.querySelector(".data2").style.filter ='contrast(0.5)';
 
 
         try {
           // document.querySelector(".progress-bar").style.display = "block";
 
           const progressBar = document.getElementById('progress-bar_1');
-          progressBar.value = 0;
+          // progressBar.value = 0;
           const formData = new FormData();
           formData.append('video', blob, 'video.mp4');
 
@@ -58,7 +58,9 @@ StratCameraRecording = async () => {
             method: 'POST',
             body: formData
           };
-          progressBar.value = 50;
+          setTimeout(() => {
+            progressBar.style.width = "30%";
+        }, 500);
           console.log("first")
 
 
@@ -71,7 +73,7 @@ StratCameraRecording = async () => {
           console.log(result, "for result>>>>>>>>.")
           console.log('API response:', result);
           progressBar.style.width = "100%";
-          progressBar.value = 100;
+          // progressBar.value = 100;
 
           document.getElementById("copy").style.display = "none";
 
@@ -99,7 +101,8 @@ StratCameraRecording = async () => {
 
       document.getElementById("copy_1").addEventListener("click", () => {
         navigator.clipboard.writeText(working_url);
-        document.querySelector(".overlay").style.display = "none";
+        document.querySelector(".data2").style.filter ='';
+
         document.querySelector(".progress-container").style.display = "none";
         document.querySelector(".videon_text").style.display = "none";
     

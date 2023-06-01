@@ -233,7 +233,7 @@ function download() {
 }
 
 async function stopAllStreamsFn() {
-  
+
 
   console.log("Stopping all streams11111111111111111111");
   // document.querySelector(".progress-container").style.display = "block";
@@ -242,7 +242,7 @@ async function stopAllStreamsFn() {
   await mediaRecorder.stop();
 
 
-  
+
   localCamStream.getTracks()
     .forEach(track => track.stop());
 
@@ -295,7 +295,7 @@ allfunction = async () => {
 
   setTimeout(() => {
     mergeStreamsFn(startRecordingFn)
-  }, 1000);
+  }, 5000);
 
 
 }
@@ -329,7 +329,8 @@ document.getElementById("copy").addEventListener("click", async () => {
   console.log(blob, "for blob");
   document.querySelector("#video_text").style.display = "block";
   document.querySelector(".progress-container").style.display = "block";
-  document.querySelector(".overlay").style.display = "block";
+  document.querySelector(".show_video").style.filter ='contrast(0.5)'
+
 
 
   try {
@@ -358,7 +359,9 @@ document.getElementById("copy").addEventListener("click", async () => {
       method: 'POST',
       body: formData
     };
-    // progressBar.value = 50;
+   setTimeout(() => {
+      progressBar.style.width = "30%";
+    }, 1000);
     console.log("first")
 
 
@@ -399,15 +402,16 @@ document.getElementById("copy").addEventListener("click", async () => {
 
 document.getElementById("copy_1").addEventListener("click", () => {
   navigator.clipboard.writeText(working_url);
-  document.querySelector(".overlay").style.display = "none";
+  document.querySelector(".show_video").style.filter =''
+
   document.querySelector(".progress-container").style.display = "none";
   document.querySelector(".videon_text").style.display = "none";
 
   setTimeout(() => {
-      document.getElementById("copy_1").textContent = "Copied..."   
+    document.getElementById("copy_1").textContent = "Copied..."
   }, 1000);
 
   setTimeout(() => {
-      document.getElementById("copy_1").textContent = "Copy Link"   
+    document.getElementById("copy_1").textContent = "Copy Link"
   }, 2000);
 })

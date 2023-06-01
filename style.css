@@ -234,7 +234,6 @@
 #pipOverlayStream {
     border: none;
     width: 550px;
-    margin-left: 108px;
 }
 
 #data3 {
@@ -339,9 +338,9 @@
 }
 
 .video_mic {
-    margin-left: 95px;
+    /* margin-left: 95px;
     margin-top: 45px;
-    margin-bottom: 30px;
+    margin-bottom: 30px; */
     width: 580px;
     border: 1px solid black;
 }
@@ -457,7 +456,7 @@
 
     #data2 {
         width: 445px;
-        margin-left: 122px;
+        /* margin-left: 122px.; */
     }
 
     #download {
@@ -483,8 +482,6 @@
 
     .videosystem {
         width: 585px;
-        margin-left: 75px;
-        margin-top: 30px;
         margin-bottom: 20px;
     }
 }
@@ -551,7 +548,7 @@
 
     #data2 {
         width: 445px;
-        margin-left: 122px;
+        /* margin-left: 122px; */
     }
 
     #download {
@@ -635,8 +632,8 @@
 
     #data2 {
         width: 455px;
-        margin-left: 150px;
-        margin-top: 50px;
+        /* margin-left: 150px;
+        margin-top: 50px; */
     }
 
     #download1 {
@@ -667,7 +664,7 @@
     }
 
     .video_mic {
-        width: 550px;
+        width: 585px;
         left: 124px;
         top: 61px;
     }
@@ -680,9 +677,9 @@
 
     #pipOverlayStream {
         width: 585px;
-        /* left: 110px; */
+        /* left: 110px;
         margin-top: 17px;
-        margin-left: 98px;
+        margin-left: 98px; */
     }
 }
 
@@ -724,8 +721,8 @@
     }
 
     #data2 {
-        margin-left: 496px;
-        margin-top: 30px;
+        /* margin-left: 496px;
+        margin-top: 30px; */
     }
 
     #download1 {
@@ -793,8 +790,8 @@
     } */
 
     #data2 {
-        margin-left: 496px;
-        margin-top: 30px;
+        /* margin-left: 496px;
+        margin-top: 30px; */
     }
 
     #download1 {
@@ -822,8 +819,8 @@
 .video1 {
     display: none;
     width: 585px;
-    margin-top: 35px;
-    margin-left: 85px;
+    height: 382px;
+  
 }
 
 .video_mic_screen {
@@ -876,36 +873,38 @@
 
     width: 750px;
     margin: auto;
-    /* width: 100%;
-        height:100%; */
     display: block;
     margin: auto;
     /* margin-top: 107px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 439px;
 }
 
 .videosystem {
     width: 580px;
-    margin-left: 85px;
-    margin-top: 35px;
-    border: 2px solid black;
     /* display: none; */
 }
 
 .videosystem_cam {
     width: 437px;
-    margin-left: 170px;
+    /* margin-left: 170px;
     margin-top: 35px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
     border: 2px solid black;
     /* display: none; */
 }
 
 .show_video {
     width: 585px;
-    margin-left: 85px;
-    margin-top: 35px;
+    /* margin-left: 85px;
+    margin-top: 35px; */
     /* margin-bottom: 20px; */
     display: none;
+    /* filter: contrast(0.5); */
+
 }
 
 
@@ -914,6 +913,7 @@
     align-items: center;
     flex-flow: column;
     justify-content: space-between;
+    /* margin-top: 30px; */
     /* margin-top: 369px; */
 }
 
@@ -945,7 +945,7 @@
     color: #FFFFFF;
     cursor: pointer;
     position: fixed;
-    top: 79%;
+    top: 82%;
     right: 50%;
     box-shadow: 8px 8px 8px #999;
     color: #1F74BA;
@@ -967,7 +967,7 @@
     color: #FFFFFF;
     cursor: pointer;
     position: fixed;
-    top: 79%;
+    top: 82%;
     right: 20%;
     box-shadow: 8px 8px 8px #999;
 
@@ -1011,6 +1011,8 @@
     width: 630px;
     margin-top: 20px;
     display: none;
+    /* filter: contrast(0.5); */
+
 }
 
 #justWebcam {
@@ -1107,10 +1109,40 @@ input:checked+.slider:before {
 }
 
 .privacy {
-    margin-top: 22px;
-    margin-left: 15px;
-    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.btn_agree{
+    margin-top: 23px;
+    margin-left: 108px;
+    width: 96px;
+    height: 39px;
+    background: linear-gradient(225deg, #0E1D4A 0%, #1F74BA 100%);
+    border-radius: 6px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* position: fixed; */
+    top: 68%;
+    right: 44%;
+    /* box-shadow: 8px 8px 8px #999; */
+    color: £000;
+    background: #1F74BA;
+}
+
+
+.terms_condition{
+    font-size: 19px;
+    margin-top: 32px;
+}
+
 
 .privacy_heading {
     text-align: center;
@@ -1123,6 +1155,10 @@ input:checked+.slider:before {
 
 .privacy_content p {
     font-size: 16px;
+    display: none;
+    margin-top: 27px;
+    margin-left: 17px;
+    margin-right: 5px;
 
 }
 
@@ -1187,23 +1223,31 @@ input:checked+.slider:before {
     font-weight: 600;
     font-size: 14px;
     text-align: center;
-    color:  #00477B;
+    color: #00477B;
     cursor: pointer;
     display: none;
     box-shadow: 8px 8px 8px #999;
 
 }
-.overlay{
+
+
+
+.overlay {
     display: none;
-    width: 586px;
+  
+    /* width: 585px; */
     background-color: rgba(0, 0, 0, 0.5);
     /* background-color: red; */
     height: 330px;
     z-index: 999999;
     position: absolute;
-    top: 105px;
-    left: 102px;
+    top: 93px;
+    left: 100px;
+    height: 332px;
+
+
 }
+
 .btns {
     column-count: 2;
     align-items: center;
@@ -1368,7 +1412,7 @@ span {
 }
 
 #progress-bar_1 {
-    width: 65px; 
+    width: 65px;
     height: 100%;
     background-color: #1F74BA;
     transition: width 0.3s;
@@ -1448,6 +1492,3 @@ span {
 .stop:hover {
     box-shadow: 8px 8px 8px #999;
 }
-
-
-

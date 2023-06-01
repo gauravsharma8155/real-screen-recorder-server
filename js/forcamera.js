@@ -36,7 +36,7 @@ StratCameraRecording = async () => {
 
             document.querySelector("#video_text").style.display = "block";
             document.querySelector(".progress-container").style.display = "block";
-            document.querySelector(".overlay").style.display = "block";
+            document.querySelector(".data2").style.filter ='contrast(0.5)';
 
 
             try {
@@ -57,7 +57,9 @@ StratCameraRecording = async () => {
                     method: 'POST',
                     body: formData
                 };
-                // progressBar.value = 50;
+                setTimeout(() => {
+                    progressBar.style.width = "30%";
+                }, 500);
                 console.log("first")
 
 
@@ -98,7 +100,8 @@ StratCameraRecording = async () => {
 
         document.getElementById("copy_1").addEventListener("click", () => {
             navigator.clipboard.writeText(working_url);
-            document.querySelector(".overlay").style.display = "none";
+            document.querySelector(".data2").style.filter ='';
+
             document.querySelector(".progress-container").style.display = "none";
             document.querySelector(".videon_text").style.display = "none";
 

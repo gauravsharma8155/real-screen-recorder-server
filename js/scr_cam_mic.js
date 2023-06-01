@@ -307,7 +307,7 @@ document.getElementById("copy").addEventListener("click", async () => {
   console.log(blob, "for blob");
   document.querySelector("#video_text").style.display = "block";
   document.querySelector(".progress-container").style.display = "block";
-  document.querySelector(".overlay").style.display = "block";
+  document.querySelector(".show_video").style.filter ='contrast(0.5)';
 
 
   try {
@@ -336,7 +336,9 @@ document.getElementById("copy").addEventListener("click", async () => {
       method: 'POST',
       body: formData
     };
-    // progressBar.value = 50;
+    setTimeout(() => {
+      progressBar.style.width = "30%";
+  }, 500);
     console.log("first")
 
 
@@ -377,7 +379,7 @@ document.getElementById("copy").addEventListener("click", async () => {
 
 document.getElementById("copy_1").addEventListener("click", () => {
   navigator.clipboard.writeText(working_url);
-  document.querySelector(".overlay").style.display = "none";
+  document.querySelector(".show_video").style.filter ='';
   document.querySelector(".progress-container").style.display = "none";
   document.querySelector(".videon_text").style.display = "none";
 

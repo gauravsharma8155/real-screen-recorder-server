@@ -1102,11 +1102,7 @@ input:checked+.slider:before {
     padding: 10px;
 }
 
-.privacy {
-    margin-top: 22px;
-    margin-left: 15px;
-    margin-right: 15px;
-}
+
 
 .privacy_heading {
     text-align: center;
