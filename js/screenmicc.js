@@ -132,7 +132,7 @@ document.getElementById("copy").addEventListener("click", async () => {
     console.log(blob, "for blob");
     document.querySelector("#video_text").style.display = "block";
     document.querySelector(".progress-container").style.display = "block";
-    document.querySelector(".video1").style.filter ='contrast(0.5)'
+    document.querySelector(".video1").style.filter = 'brightness(0.3)'
 
 
 
@@ -145,8 +145,7 @@ document.getElementById("copy").addEventListener("click", async () => {
         const formData = new FormData();
         formData.append('video', blob, 'video.mp4');
 
-
-
+        
         for (const form of formData.entries()) {
             console.log(form, 'form');
         }
@@ -179,9 +178,24 @@ document.getElementById("copy").addEventListener("click", async () => {
 
 
         working_url = result.url;
+        document.querySelector("#video_text").style.display = "none";
+        document.querySelector(".videon_text_2").style.display = "block";
+
+        setTimeout(() => {
+            document.querySelector(".videon_text_2").style.display = "none";
+            document.querySelector(".progress-container").style.display = "none";
+            document.querySelector(".video1").style.filter = ''
+        }, 2000);
+
+
+
+
         // navigator.clipboard.writeText(working_url);
         document.querySelector(".btn_copy").style.display = "none";
         document.querySelector(".btn_copy_1").style.display = "block";
+        
+        // document.querySelector(".progress-container").style.display = "none";
+
 
 
 
@@ -201,17 +215,17 @@ document.getElementById("copy").addEventListener("click", async () => {
 
 document.getElementById("copy_1").addEventListener("click", () => {
     navigator.clipboard.writeText(working_url);
-       document.querySelector(".video1").style.filter =''
+    document.querySelector(".video1").style.filter = ''
 
     document.querySelector(".progress-container").style.display = "none";
     document.querySelector(".videon_text").style.display = "none";
 
     setTimeout(() => {
-        document.getElementById("copy_1").textContent = "Copied..."   
+        document.getElementById("copy_1").textContent = "Copied..."
     }, 1000);
 
     setTimeout(() => {
-        document.getElementById("copy_1").textContent = "Copy Link"   
+        document.getElementById("copy_1").textContent = "Copy Link"
     }, 2000);
 })
 
@@ -219,7 +233,7 @@ document.getElementById("copy_1").addEventListener("click", () => {
 
 collecdata()
 stopdata = async () => {
-    
+
 
     console.log("this is console for stop1111111111111");
     blob = new Blob(chunks, {

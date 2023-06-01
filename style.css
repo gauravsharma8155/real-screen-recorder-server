@@ -1411,6 +1411,21 @@ span {
     z-index: 9999999;
 }
 
+.videon_text_2 {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: absolute;
+    top: 48%;
+    left: 36%;
+    color: white;
+    display: none;
+    z-index: 9999999;
+}
+
 #progress-bar_1 {
     width: 65px;
     height: 100%;

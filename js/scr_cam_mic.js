@@ -303,69 +303,153 @@ let resume = document.getElementById("resume").addEventListener("click", async (
 let stop_record = document.getElementById("stop_record").addEventListener("click", stopAllStreamsFn)
 
 
+// document.getElementById("copy").addEventListener("click", async () => {
+//   console.log(blob, "for blob");
+//   document.querySelector("#video_text").style.display = "block";
+//   document.querySelector(".progress-container").style.display = "block";
+//   document.querySelector(".show_video").style.filter ='contrast(0.5)';
+
+
+//   try {
+//     // document.querySelector(".progress-bar").style.display = "block";
+
+//     const progressBar = document.getElementById('progress-bar_1');
+//     // progressBar.value = 0;
+
+
+
+
+
+
+
+
+//     const formData = new FormData();
+//     formData.append('video', blob, 'video.mp4');
+
+
+
+//     for (const form of formData.entries()) {
+//       console.log(form, 'form');
+//     }
+
+//     const options = {
+//       method: 'POST',
+//       body: formData
+//     };
+//     setTimeout(() => {
+//       progressBar.style.width = "30%";
+//   }, 500);
+//     console.log("first")
+
+
+//     console.log(options);
+
+//     const Response = await fetch('https://www.realscreenrec.com/share/', options);
+//     console.log(Response, "for reponse >>.");
+
+//     const result = await Response.json();
+//     console.log(result, "for result>>>>>>>>.")
+//     console.log('API response:', result);
+//     progressBar.style.width = "100%";
+//     progressBar.value = 100;
+
+//     document.getElementById("copy").style.display = "none";
+
+
+//     working_url = result.url;
+//     // navigator.clipboard.writeText(working_url);
+//     document.querySelector(".btn_copy").style.display = "none";
+//     document.querySelector(".btn_copy_1").style.display = "block";
+
+
+
+//   }
+//   catch (e) {
+//     console.log(console.error(e))
+//   }
+
+
+
+//   // let Record_data = document.getElementById("Record_data").src;
+//   // console.log(Record_data);
+//   // console.log(working_url, "for working...");
+//   // navigator.clipboard.writeText(working_url);
+
+// });
 document.getElementById("copy").addEventListener("click", async () => {
   console.log(blob, "for blob");
   document.querySelector("#video_text").style.display = "block";
   document.querySelector(".progress-container").style.display = "block";
-  document.querySelector(".show_video").style.filter ='contrast(0.5)';
+  document.querySelector(".show_video").style.filter = 'brightness(0.3)'
+
+
 
 
   try {
-    // document.querySelector(".progress-bar").style.display = "block";
 
-    const progressBar = document.getElementById('progress-bar_1');
-    // progressBar.value = 0;
+      const progressBar = document.getElementById('progress-bar_1');
+      // progressBar.value = 0;
 
+      const formData = new FormData();
+      formData.append('video', blob, 'video.mp4');
 
+      
+      for (const form of formData.entries()) {
+          console.log(form, 'form');
+      }
 
-
-
-
-
-
-    const formData = new FormData();
-    formData.append('video', blob, 'video.mp4');
-
-
-
-    for (const form of formData.entries()) {
-      console.log(form, 'form');
-    }
-
-    const options = {
-      method: 'POST',
-      body: formData
-    };
-    setTimeout(() => {
-      progressBar.style.width = "30%";
-  }, 500);
-    console.log("first")
+      const options = {
+          method: 'POST',
+          body: formData
+      };
+      // progressBar.value = 50;
+      console.log("first")
 
 
-    console.log(options);
+      console.log(options);
+      setTimeout(() => {
+          progressBar.style.width = "30%";
+      }, 500);
 
-    const Response = await fetch('https://www.realscreenrec.com/share/', options);
-    console.log(Response, "for reponse >>.");
-
-    const result = await Response.json();
-    console.log(result, "for result>>>>>>>>.")
-    console.log('API response:', result);
-    progressBar.style.width = "100%";
-    progressBar.value = 100;
-
-    document.getElementById("copy").style.display = "none";
+      const Response = await fetch('https://www.realscreenrec.com/share/', options);
+      console.log(Response, "for reponse >>.");
+      progressBar.style.width = "50%";
 
 
-    working_url = result.url;
-    // navigator.clipboard.writeText(working_url);
-    document.querySelector(".btn_copy").style.display = "none";
-    document.querySelector(".btn_copy_1").style.display = "block";
+      const result = await Response.json();
+      console.log(result, "for result>>>>>>>>.")
+      console.log('API response:', result);
+      progressBar.style.width = "100%";
+      progressBar.value = ""
+
+      document.getElementById("copy").style.display = "none";
+
+
+      working_url = result.url;
+      document.querySelector("#video_text").style.display = "none";
+      document.querySelector(".videon_text_2").style.display = "block";
+
+      setTimeout(() => {
+          document.querySelector(".videon_text_2").style.display = "none";
+          document.querySelector(".progress-container").style.display = "none";
+          document.querySelector(".show_video").style.filter = ''
+      }, 2000);
+
+
+
+
+      // navigator.clipboard.writeText(working_url);
+      document.querySelector(".btn_copy").style.display = "none";
+      document.querySelector(".btn_copy_1").style.display = "block";
+      
+      // document.querySelector(".progress-container").style.display = "none";
+
 
 
 
   }
   catch (e) {
-    console.log(console.error(e))
+      console.log(console.error(e))
   }
 
 
@@ -376,7 +460,6 @@ document.getElementById("copy").addEventListener("click", async () => {
   // navigator.clipboard.writeText(working_url);
 
 });
-
 document.getElementById("copy_1").addEventListener("click", () => {
   navigator.clipboard.writeText(working_url);
   document.querySelector(".show_video").style.filter ='';
